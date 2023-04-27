@@ -86,50 +86,39 @@
             margin-right: 10px;
         }
     </style>
-    <script>
-        $(document).ready(function () {
-            fetch("https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=a5b84ee7e44bdf29e24ed77605d8f694").then(res => res.json()).then(data => {
-                let result = data['main']['temp']
-                $('#temp').text(Math.floor(result - 273.15)) 
-                // 화씨 - K = 섭씨
-                // Math.floor()를 이용해 소수점 너무 길어서 버림
-            })
-        })
-    </script>
 </head>
 
 <body>
     <div class="mytitle">
         <h1>내 생에 최고의 영화들!</h1>
-        <div>현재 서울의 날씨 : <span id="temp"> </span>도</div>
-        <button onclick="hey()">영화 기록하기</button>
+        <button>영화 기록하기</button>
     </div>
     <div class="mypost">
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">영화 url</label>
-        </div>
-        <div class="input-group mb-5">
-            <label class="input-group-text" for="inputGroupSelect01">별점</label>
-            <select class="form-select" id="inputGroupSelect01">
-                <option selected>-- 선택하기 --</option>
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">코멘트</label>
-        </div>
-        <div class=mybtn>
-            <button type="button" class="btn btn-dark">기록하기</button>
-            <button type="button" class="btn btn-outline-dark">닫기</button>
+            </div>
+            <div class="input-group mb-5">
+                <label class="input-group-text" for="inputGroupSelect01">별점</label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>-- 선택하기 --</option>
+                  <option value="1">⭐</option>
+                  <option value="2">⭐⭐</option>
+                  <option value="3">⭐⭐⭐</option>
+                  <option value="4">⭐⭐⭐⭐</option>
+                  <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+              </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">코멘트</label>
+            </div>
+            <div class=mybtn>
+                <button type="button" class="btn btn-dark">기록하기</button>
+                <button type="button" class="btn btn-outline-dark">닫기</button>
 
+            </div>
         </div>
-    </div>
     </div>
     <div class="mycards">
         <div class="row row-cols-1 row-cols-md-4 g-4">
